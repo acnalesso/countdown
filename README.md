@@ -13,11 +13,17 @@ By [Adrian Short](http://adrianshort.co.uk/)
 
 twitter: [@adrianshort](http://twitter.com/adrianshort)
 
+With thanks to [Paul Battley (threedaymonk)](https://github.com/threedaymonk) for contributions.
+
 Data from [Transport for London](http://www.tfl.gov.uk/)'s unofficial Countdown API
 
 
 Installation
 ------------
+
+If you're not on Ruby 1.9 and you haven't done it already, [tell ruby to load rubygems automatically:](http://docs.rubygems.org/read/chapter/3#page70)
+
+    $ export RUBYOPT=rubygems
 
 Get the required gems if you don't already have them:
 
