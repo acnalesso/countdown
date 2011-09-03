@@ -21,25 +21,11 @@ Data from [Transport for London](http://www.tfl.gov.uk/)'s unofficial Countdown 
 Installation
 ------------
 
-If you're not on Ruby 1.9 and you haven't done it already, [tell ruby to load rubygems automatically:](http://docs.rubygems.org/read/chapter/3#page70)
+Install the countdown gem:
 
-    $ export RUBYOPT=rubygems
+    $ gem install countdown
 
-Get the required gems if you don't already have them:
-
-    $ sudo gem install json yaml
-
-Move the script to your ~/bin directory:
-
-    $ mv countdown ~/bin
-
-Make the script executable:
-
-    $ chmod u+x ~/bin/countdown
-
-Move the configuration file to your home directory:
-
-    $ mv .countdown.yml ~
+Download the [configuration file](https://raw.github.com/adrianshort/countdown/master/.countdown.yml) and save it in your home directory (`~`) as `.countdown.yml`
 
 Give it a quick test:
 
