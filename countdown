@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'open-uri'
+require 'json'
+require 'yaml'
+
+tree = YAML::parse( File.open( File.expand_path("~/.countdown.yml") ) )
+locations = tree['locations'].transform
+
+if ARGV[0]
+  arg = ARGV[0].strip.downcase
+  
+  for location in locations
+    if location['name'].downcase == arg
+      stops = location['stops']
+    end
+  end
+
+  unless stops
+    puts "Location not found. Check your .countdown.yml file for valid values."
+    exit
+  end
+
+else
+
+  if locations.count
+    stops = locations.first['stops']
+  else
+    puts "There are no locations defined in your .countdown.yml file."
+    exit
+  end
+end
+
+for stop in stops
+  res = open( "http://countdown.tfl.gov.uk/stopBoard/#{stop['id']}" ).read
+  data = JSON.parse(res)
+  
+  title = "#{stop['name']} (#{stop['id']})"
+  puts title
+  title.length.times { print('-') }
+  puts
+  
+  for bus in data['arrivals']
+    puts sprintf( "%-5s %-20s %-s",
+          bus['routeName'],
+          bus['destination'],
+          bus['estimatedWait'] )
+  end
+
+  puts
+end

@@ -1,0 +1,28 @@
+# Copy this file to your home directory (~)
+# Set up as many locations as you like, then run the program, e.g.
+# $ countdown morden
+# Find stop IDs using TfL's website: http://m.countdown.tfl.gov.uk/
+
+locations:
+
+  - name: Home
+    stops:
+      - name: Sutton Common Road
+        id:   50799
+      - name: Ash Road
+        id:   50823
+
+  - name: Sutton
+    stops:
+      - name: Sutton Civic Offices
+        id:   52494
+      - name: Sutton Station
+        id:   77391
+
+  - name: Morden
+    stops:
+      - name: Morden Station G southbound
+        id:   73390
+      - name: Morden Station A northbound
+        id:   72666
+    
