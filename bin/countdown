@@ -21,7 +21,7 @@ if ARGV[0]
   location = locations.find{ |loc| loc["name"].downcase == arg }
 
   unless location
-    $stderr.puts "Location not found. Your .countdown.yml file has the following:"
+    $stderr.puts "Location not found. #{CONFIG_PATH} contains the following locations:"
     $stderr.puts *locations.map{ |loc| "- " + loc["name"] }
     exit 1
   end
