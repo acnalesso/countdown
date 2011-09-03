@@ -5,8 +5,15 @@ require "json"
 require "yaml"
 
 API_URL = "http://countdown.tfl.gov.uk/stopBoard/%d"
+CONFIG_PATH = File.expand_path("~/.countdown.yml")
 
-tree = YAML.parse(File.open(File.expand_path("~/.countdown.yml")))
+unless File.exist?(CONFIG_PATH)
+  $stderr.puts "The configuration file #{CONFIG_PATH} is missing."
+  $stderr.puts "See https://github.com/adrianshort/countdown for instructions and a sample file."
+  exit 1
+end
+
+tree = YAML.parse(File.open(CONFIG_PATH))
 locations = tree["locations"].transform
 
 if ARGV[0]
@@ -14,7 +21,7 @@ if ARGV[0]
   location = locations.find{ |loc| loc["name"].downcase == arg }
 
   unless location
-    $stderr.puts "Location not found. Your .countdown.yml file has the following:"
+    $stderr.puts "Location not found. #{CONFIG_PATH} contains the following locations:"
     $stderr.puts *locations.map{ |loc| "- " + loc["name"] }
     exit 1
   end
