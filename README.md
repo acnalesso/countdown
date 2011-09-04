@@ -7,16 +7,13 @@ A command line utility to show bus arrival times at bus stops in London. Like th
 Credits
 -------
 
-By [Adrian Short](http://adrianshort.co.uk/)
+By [Adrian Short](http://adrianshort.co.uk/) and [Paul Battley](https://github.com/threedaymonk).
 
-[<adrian.short@gmail.com>](mailto:adrian.short@gmail.com)
+The data is from [Transport for London's](http://www.tfl.gov.uk/) unofficial Countdown API.
 
-twitter: [@adrianshort](http://twitter.com/adrianshort)
+The official TfL Countdown apps are: [big web](http://countdown.tfl.gov.uk/), [little web](http://m.countdown.tfl.gov.uk/) and [accessible](http://accessible.countdown.tfl.gov.uk/).
 
-With thanks to [Paul Battley (threedaymonk)](https://github.com/threedaymonk) for contributions.
-
-Data from [Transport for London](http://www.tfl.gov.uk/)'s unofficial Countdown API
-
+This is an unofficial third party app. The authors are not responsible for TfL nor is TfL responsible for them.
 
 Installation
 ------------
